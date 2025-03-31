@@ -32,11 +32,11 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Home", icon: <Home size={20} /> },
-    { id: "about", label: "About", icon: <User size={20} /> },
-    { id: "skills", label: "Skills", icon: <Code size={20} /> },
-    { id: "projects", label: "Projects", icon: <Briefcase size={20} /> },
-    { id: "contact", label: "Contact", icon: <Mail size={20} /> },
+    { id: "home", label: "Home", icon: <Home size={18} /> },
+    { id: "about", label: "About", icon: <User size={18} /> },
+    { id: "skills", label: "Skills", icon: <Code size={18} /> },
+    { id: "projects", label: "Projects", icon: <Briefcase size={18} /> },
+    { id: "contact", label: "Contact", icon: <Mail size={18} /> },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -50,44 +50,79 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed bottom-0 left-0 right-0 z-50 flex justify-center items-center py-4 px-6 transition-all duration-300 ${
-        isScrolled ? "mb-4" : "mb-8"
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/80 backdrop-blur-lg shadow-md py-2" : "py-4"
       }`}
     >
-      <div
-        className={`flex items-center gap-1 sm:gap-2 px-2 py-2 sm:px-4 sm:py-3 bg-background/80 backdrop-blur-lg rounded-full border-2 border-border transition-all duration-300 shadow-lg ${
-          isScrolled ? "scale-90" : "scale-100"
-        }`}
-      >
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`relative flex flex-col items-center justify-center p-2 sm:p-3 rounded-full transition-all duration-300 ${
-              activeSection === item.id
-                ? "bg-primary text-primary-foreground scale-110"
-                : "hover:bg-accent/20 text-foreground"
-            }`}
-            aria-label={item.label}
-          >
-            {item.icon}
-            <span
-              className={`text-[8px] sm:text-xs mt-1 font-pixel transition-opacity duration-300 ${
-                activeSection === item.id ? "opacity-100" : "opacity-0"
-              }`}
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          <div className="text-xl font-pixel">
+            <span className="text-primary">Noel</span> Regis
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 rounded-md transition-colors duration-200 flex items-center gap-2 ${
+                  activeSection === item.id
+                    ? "bg-primary/20 text-primary"
+                    : "hover:bg-accent/20 text-foreground"
+                }`}
+              >
+                {item.icon}
+                <span className="font-medium">{item.label}</span>
+              </button>
+            ))}
+            
+            <button
+              onClick={toggleTheme}
+              className="ml-2 p-2 rounded-md hover:bg-accent/20 transition-colors"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {item.label}
-            </span>
-          </button>
-        ))}
-        <button
-          onClick={toggleTheme}
-          className="flex items-center justify-center p-2 sm:p-3 rounded-full hover:bg-accent/20 transition-all duration-300 ml-1"
-          aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          </div>
+          
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md hover:bg-accent/20 transition-colors mr-2"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile navigation at the bottom */}
+      <div className="md:hidden fixed bottom-4 left-0 right-0 flex justify-center z-50">
+        <div className="flex items-center gap-1 px-2 py-2 bg-background/80 backdrop-blur-lg rounded-full border border-border shadow-lg">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`relative flex flex-col items-center justify-center p-2 rounded-full transition-all duration-300 ${
+                activeSection === item.id
+                  ? "bg-primary text-primary-foreground scale-110"
+                  : "hover:bg-accent/20 text-foreground"
+              }`}
+              aria-label={item.label}
+            >
+              {item.icon}
+              <span
+                className={`text-xs mt-1 font-medium transition-opacity duration-300 ${
+                  activeSection === item.id ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {item.label}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
     </nav>
   );

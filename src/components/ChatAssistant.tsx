@@ -13,13 +13,13 @@ type Message = {
 };
 
 const ChatAssistant = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [isMinimized, setIsMinimized] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi there! I'm Noel's AI assistant. How can I help you today?",
+      content: "Greetings, I am Noel's virtual assistant. How may I assist you today?",
       timestamp: Date.now(),
     },
   ]);
@@ -53,11 +53,11 @@ const ChatAssistant = () => {
 
     try {
       // In a real implementation, you would call the OpenAI API here
-      // For now, we'll simulate a response after a short delay
+      // For now, we'll simulate a response with enhanced answers about Noel
       setTimeout(() => {
         const assistantMessage: Message = {
           role: "assistant",
-          content: getSimulatedResponse(message),
+          content: getEnhancedResponse(message),
           timestamp: Date.now(),
         };
         setMessages((prev) => [...prev, assistantMessage]);
@@ -74,19 +74,23 @@ const ChatAssistant = () => {
     }
   };
 
-  const getSimulatedResponse = (userMessage: string): string => {
+  const getEnhancedResponse = (userMessage: string): string => {
     const lowerCaseMessage = userMessage.toLowerCase();
     
     if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi")) {
-      return "Hello! How can I assist you with Noel's portfolio today?";
+      return "Greetings. How may I assist you with information regarding Noel Regis's professional portfolio?";
     } else if (lowerCaseMessage.includes("skills") || lowerCaseMessage.includes("experience")) {
-      return "Noel is skilled in JavaScript, React, Node.js, and many other technologies. Check out the Skills section for a complete list!";
+      return "Noel Regis possesses proficiency in JavaScript, React, Node.js, and various other technologies. His expertise extends to both frontend and backend development, complemented by skills in critical business analytics and market research.";
     } else if (lowerCaseMessage.includes("contact") || lowerCaseMessage.includes("email")) {
-      return "You can contact Noel via email at noel.regis04@gmail.com or through the contact form on this site.";
+      return "You may contact Noel Regis via email at noel.regis04@gmail.com or through the contact form on this site. For professional networking, his LinkedIn profile is also available.";
     } else if (lowerCaseMessage.includes("project") || lowerCaseMessage.includes("work")) {
-      return "Noel has worked on several projects including FundLaunch, SmartPark, and Gas Help Center. You can find more details in the Projects section!";
+      return "Noel has developed several notable projects including FundLaunch (an online crowdfunding platform), SmartPark (an innovative parking management system), and Gas Help Center (a utility services solution). You can find detailed information in the Projects section.";
+    } else if (lowerCaseMessage.includes("education") || lowerCaseMessage.includes("study")) {
+      return "Noel has a background in Computer Science Engineering, which forms the foundation of his technical expertise in software development.";
+    } else if (lowerCaseMessage.includes("location") || lowerCaseMessage.includes("where")) {
+      return "Noel Regis is based in Asansol, West Bengal, India.";
     } else {
-      return "Thanks for your message! Noel will get back to you soon. Feel free to explore the portfolio to learn more about his work and skills.";
+      return "Thank you for your inquiry. Noel Regis is a full-stack developer specializing in creating impactful digital experiences. His expertise encompasses both technical development and business analytics. Please feel free to explore the portfolio for more detailed information about his professional background and projects.";
     }
   };
 
@@ -108,7 +112,7 @@ const ChatAssistant = () => {
           }`}
         >
           <div className="flex items-center justify-between p-3 bg-primary text-primary-foreground">
-            <h3 className="font-pixel text-sm">AI Assistant</h3>
+            <h3 className="font-pixel text-sm">Virtual Assistant</h3>
             <div className="flex gap-2">
               <button
                 onClick={minimizeChat}
@@ -175,7 +179,7 @@ const ChatAssistant = () => {
                   ref={inputRef}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type a message..."
+                  placeholder="Ask a question..."
                   className="flex-1"
                   disabled={isLoading}
                 />

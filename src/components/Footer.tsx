@@ -16,10 +16,6 @@ const Footer = () => {
         <p className="text-muted-foreground text-sm">
           © {currentYear} Noel Regis. All rights reserved.
         </p>
-        
-        <div className="mt-4 text-xs text-muted-foreground/70">
-          <p>Designed & Built with 💻 and 💚</p>
-        </div>
       </div>
     </footer>
   );

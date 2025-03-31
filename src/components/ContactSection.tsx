@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +15,7 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,19 +24,39 @@ const ContactSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // In a real implementation, you would use an email service like EmailJS
+      // Here's a simulated email sending with a delay
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      
+      // Display success toast
       toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon!",
+        title: "Message Sent Successfully",
+        description: "Thank you for your inquiry. I will respond at the earliest opportunity.",
       });
+      
+      // Reset form
       setFormData({ name: "", email: "", message: "" });
+      
+      // In a real implementation with EmailJS, you would do:
+      // await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_USER_ID');
+    } catch (error) {
+      toast({
+        title: "Message Failed to Send",
+        description: "Please try again or contact directly via email.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
+  };
+
+  const openGoogleMaps = () => {
+    window.open("https://maps.google.com/?q=Asansol,West+Bengal,India", "_blank");
   };
 
   const socialLinks = [
@@ -66,22 +87,22 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title inline-block mx-auto font-pixel">
-            <span className="text-primary">&lt;</span> Contact <span className="text-primary">/&gt;</span>
+            <span className="text-primary">&lt;</span> Correspondence <span className="text-primary">/&gt;</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            I'm always eager to learn and collaborate on new projects.
-            Feel free to reach out to me 🙂
+            I am always interested in learning about and collaborating on innovative projects.
+            Please do not hesitate to reach out.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-            <h3 className="font-pixel text-lg mb-6">Get in touch</h3>
+            <h3 className="font-pixel text-lg mb-6">Communication Inquiry</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Name
+                  Full Name
                 </label>
                 <Input
                   id="name"
@@ -89,13 +110,14 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Your name"
+                  placeholder="Your full name"
+                  className="bg-background/50"
                 />
               </div>
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
+                  Email Address
                 </label>
                 <Input
                   id="email"
@@ -105,12 +127,13 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="your.email@example.com"
+                  className="bg-background/50"
                 />
               </div>
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
+                  Message Content
                 </label>
                 <Textarea
                   id="message"
@@ -118,8 +141,9 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Your message here..."
+                  placeholder="Please provide details about your inquiry..."
                   rows={5}
+                  className="bg-background/50"
                 />
               </div>
               
@@ -128,20 +152,20 @@ const ContactSection = () => {
                 className="w-full bg-primary hover:bg-primary/90 text-white"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Submit Inquiry"}
               </Button>
             </form>
           </Card>
 
           <div className="space-y-6">
             <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-              <h3 className="font-pixel text-lg mb-4">Contact Details</h3>
+              <h3 className="font-pixel text-lg mb-4">Contact Information</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Mail className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Email</p>
+                    <p className="text-sm font-medium">Email Address</p>
                     <a
                       href="mailto:noel.regis04@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -154,7 +178,7 @@ const ContactSection = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Phone</p>
+                    <p className="text-sm font-medium">Telephone</p>
                     <a
                       href="tel:+917319546900"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -164,12 +188,13 @@ const ContactSection = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 cursor-pointer" onClick={openGoogleMaps}>
                   <MapPin className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Location</p>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm font-medium">Geographic Location</p>
+                    <p className="text-muted-foreground hover:text-primary transition-colors group flex items-center">
                       Asansol, West Bengal, India
+                      <span className="text-xs ml-2 text-primary opacity-70 group-hover:opacity-100">(View on Map)</span>
                     </p>
                   </div>
                 </div>
@@ -177,7 +202,7 @@ const ContactSection = () => {
             </Card>
 
             <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-              <h3 className="font-pixel text-lg mb-4">Connect with me</h3>
+              <h3 className="font-pixel text-lg mb-4">Professional Network</h3>
               
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social) => (
@@ -187,7 +212,7 @@ const ContactSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-primary/10 hover:border-primary transition-colors"
-                    aria-label={`Visit ${social.name}`}
+                    aria-label={`Visit ${social.name} profile`}
                   >
                     <span className="text-primary">{social.icon}</span>
                     <span>{social.name}</span>
@@ -198,8 +223,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
     </section>
   );
 };

@@ -1,9 +1,39 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatDate = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    return date.toLocaleDateString(undefined, options);
+  };
+
+  const formatTime = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = { 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      second: '2-digit',
+      hour12: true
+    };
+    return date.toLocaleTimeString(undefined, options);
+  };
+
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -12,7 +42,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
       <div
         className="absolute inset-0 bg-gradient-terminal opacity-70 z-0"
         style={{
@@ -23,8 +53,13 @@ const HeroSection = () => {
       ></div>
 
       <div className="container mx-auto px-4 z-10 py-24">
+        <div className="absolute top-24 right-8 bg-background/30 backdrop-blur-md px-4 py-2 rounded-lg border border-primary/20 text-sm font-mono">
+          <div className="text-primary">{formatDate(currentDateTime)}</div>
+          <div className="text-right font-pixel text-xs">{formatTime(currentDateTime)}</div>
+        </div>
+        
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/20 text-primary animate-pulse">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/20 text-primary">
             <span className="font-pixel text-xs sm:text-sm">Full Stack Developer</span>
           </div>
           
@@ -40,7 +75,7 @@ const HeroSection = () => {
           
           <div className="terminal-container bg-black/50 p-6 rounded-lg mb-10 border-l-4 border-primary max-w-2xl mx-auto">
             <p className="terminal-text font-mono text-pixel-text-dark text-sm sm:text-base leading-relaxed text-left">
-              <span className="text-primary">{'>'}</span> Hi, I'm Noel Regis, a full-stack developer passionate about creating impactful digital experiences. Let's bring your ideas to life.
+              <span className="text-primary">{'>'}</span> Greetings, I am Noel Regis, a full-stack developer dedicated to creating sophisticated digital experiences. I would be pleased to collaborate on bringing your concepts to fruition.
             </p>
           </div>
           
@@ -54,7 +89,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              Get In Touch
+              Contact Me
             </Button>
             
             <Button
@@ -67,7 +102,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              View Projects
+              View Portfolio
             </Button>
           </div>
         </div>
@@ -76,7 +111,7 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pixel-bounce">
         <button
           onClick={scrollToAbout}
-          aria-label="Scroll to About section"
+          aria-label="View more information"
           className="text-primary hover:text-primary/80 transition-colors"
         >
           <ArrowDown size={24} />
