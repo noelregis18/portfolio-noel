@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { LinkedIn, GitHub, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Linkedin, Github, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -42,12 +42,12 @@ const ContactSection = () => {
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/noel-regis-aa07081b1/",
-      icon: <LinkedIn size={20} />,
+      icon: <Linkedin size={20} />,
     },
     {
       name: "GitHub",
       url: "https://github.com/noelregis18",
-      icon: <GitHub size={20} />,
+      icon: <Github size={20} />,
     },
     {
       name: "Twitter",
