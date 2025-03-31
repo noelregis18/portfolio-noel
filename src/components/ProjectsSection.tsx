@@ -63,6 +63,15 @@ const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
       tags: ["TypeScript", "Canvas API", "React"],
     },
+    {
+      id: 6,
+      title: "Mirror",
+      description: "Simple, private file sharing",
+      website: "https://send.vis.ee/",
+      github: "https://github.com/noelregis18/Mirror",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+      tags: ["JavaScript", "Privacy", "File Sharing"],
+    },
   ];
 
   return (

@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,7 +18,7 @@ const ChatAssistant = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Greetings, I am Noel's virtual assistant. How may I assist you today?",
+      content: "Greetings. I am the Professional Support Assistant for Mr. Noel Regis. How may I be of service to you today?",
       timestamp: Date.now(),
     },
   ]);
@@ -78,19 +77,19 @@ const ChatAssistant = () => {
     const lowerCaseMessage = userMessage.toLowerCase();
     
     if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi")) {
-      return "Greetings. How may I assist you with information regarding Noel Regis's professional portfolio?";
+      return "Good day. How may I assist you with information regarding Mr. Noel Regis's professional portfolio?";
     } else if (lowerCaseMessage.includes("skills") || lowerCaseMessage.includes("experience")) {
-      return "Noel Regis possesses proficiency in JavaScript, React, Node.js, and various other technologies. His expertise extends to both frontend and backend development, complemented by skills in critical business analytics and market research.";
+      return "Mr. Noel Regis possesses considerable expertise in JavaScript, React, Node.js, and various other technologies. His proficiencies encompass both frontend and backend development, complemented by analytical capabilities in business strategy and market research.";
     } else if (lowerCaseMessage.includes("contact") || lowerCaseMessage.includes("email")) {
-      return "You may contact Noel Regis via email at noel.regis04@gmail.com or through the contact form on this site. For professional networking, his LinkedIn profile is also available.";
+      return "You may establish communication with Mr. Noel Regis via electronic mail at noel.regis04@gmail.com or through the correspondence form available on this website. For professional networking, his LinkedIn profile is also accessible.";
     } else if (lowerCaseMessage.includes("project") || lowerCaseMessage.includes("work")) {
-      return "Noel has developed several notable projects including FundLaunch (an online crowdfunding platform), SmartPark (an innovative parking management system), and Gas Help Center (a utility services solution). You can find detailed information in the Projects section.";
+      return "Mr. Regis has developed several noteworthy projects including FundLaunch (an online crowdfunding platform), SmartPark (an innovative parking management system), and Mirror (a private file sharing solution). You may find comprehensive information in the Projects section.";
     } else if (lowerCaseMessage.includes("education") || lowerCaseMessage.includes("study")) {
-      return "Noel has a background in Computer Science Engineering, which forms the foundation of his technical expertise in software development.";
+      return "Mr. Noel Regis has a formal background in Computer Science Engineering, which forms the foundation of his technical proficiency in software development.";
     } else if (lowerCaseMessage.includes("location") || lowerCaseMessage.includes("where")) {
-      return "Noel Regis is based in Asansol, West Bengal, India.";
+      return "Mr. Noel Regis is currently based in Asansol, West Bengal, India.";
     } else {
-      return "Thank you for your inquiry. Noel Regis is a full-stack developer specializing in creating impactful digital experiences. His expertise encompasses both technical development and business analytics. Please feel free to explore the portfolio for more detailed information about his professional background and projects.";
+      return "Thank you for your inquiry. Mr. Noel Regis is a full-stack developer specializing in creating impactful digital solutions. His expertise encompasses both technical development and business analytics. Please feel free to explore the portfolio for more detailed information about his professional background and projects.";
     }
   };
 
@@ -112,7 +111,7 @@ const ChatAssistant = () => {
           }`}
         >
           <div className="flex items-center justify-between p-3 bg-primary text-primary-foreground">
-            <h3 className="font-pixel text-sm">Virtual Assistant</h3>
+            <h3 className="font-montserrat font-medium text-sm">Professional Support Assistant</h3>
             <div className="flex gap-2">
               <button
                 onClick={minimizeChat}

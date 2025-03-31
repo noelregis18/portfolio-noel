@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useTheme } from "./ThemeProvider";
 import { Moon, Sun, Home, User, Code, Briefcase, Mail } from "lucide-react";
@@ -57,8 +56,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="text-xl font-pixel">
-            <span className="text-primary">Noel</span> Regis
+          <div className="text-xl font-montserrat font-semibold tracking-wide">
+            <span className="text-primary">Noel</span> <span className="font-normal">Regis</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-1">
