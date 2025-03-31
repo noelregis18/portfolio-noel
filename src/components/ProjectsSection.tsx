@@ -69,10 +69,10 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title inline-block mx-auto font-pixel">
+          <h2 className="section-title inline-block mx-auto font-montserrat font-bold">
             <span className="text-primary">&lt;</span> Projects <span className="text-primary">/&gt;</span>
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto font-montserrat">
             Featured projects I've built and contributed to
           </p>
         </div>
@@ -101,21 +101,21 @@ const ProjectsSection = () => {
                   }}
                 ></div>
                 <div className="absolute top-2 right-2">
-                  <div className="px-2 py-1 bg-card/80 backdrop-blur-sm rounded text-xs font-pixel inline-block border border-border">
+                  <div className="px-2 py-1 bg-card/80 backdrop-blur-sm rounded text-xs font-montserrat inline-block border border-border">
                     Project #{project.id}
                   </div>
                 </div>
               </div>
 
               <div className="p-5">
-                <h3 className="text-lg font-bold font-pixel mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <h3 className="text-lg font-bold font-montserrat mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 font-montserrat">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs rounded-md bg-primary/20 text-primary"
+                      className="px-2 py-1 text-xs rounded-md bg-primary/20 text-primary font-montserrat"
                     >
                       {tag}
                     </span>
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors font-montserrat"
                   >
                     <GitBranch size={16} className="mr-1" />
                     Code
@@ -136,7 +136,7 @@ const ProjectsSection = () => {
                     href={project.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors font-montserrat"
                   >
                     <Globe size={16} className="mr-1" />
                     Live
@@ -149,7 +149,7 @@ const ProjectsSection = () => {
                   >
                     <Button
                       size="sm"
-                      className="h-8 px-3 bg-primary hover:bg-primary/90 text-white"
+                      className="h-8 px-3 bg-primary hover:bg-primary/90 text-white font-montserrat"
                     >
                       <ExternalLink size={14} className="mr-1" /> Visit
                     </Button>

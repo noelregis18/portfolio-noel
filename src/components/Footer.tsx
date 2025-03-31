@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="py-8 border-t border-border">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4">
-          <div className="inline-block font-pixel text-lg font-bold">
+          <div className="inline-block font-montserrat text-lg font-bold">
             <span className="text-primary">Noel</span> Regis
           </div>
         </div>

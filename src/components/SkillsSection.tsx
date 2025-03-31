@@ -14,10 +14,10 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title inline-block mx-auto font-pixel">
+          <h2 className="section-title inline-block mx-auto font-montserrat font-bold">
             <span className="text-primary">&lt;</span> Technical Expertise <span className="text-primary">/&gt;</span>
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto font-montserrat">
             Technologies and methodologies utilized in the development of professional solutions
           </p>
         </div>
@@ -28,7 +28,7 @@ const SkillsSection = () => {
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 text-sm rounded-md bg-primary/10 text-primary inline-block hover:bg-primary/30 transition-colors duration-200 hover:scale-105 transform"
+                  className="px-4 py-2 text-sm rounded-md bg-primary/10 text-primary inline-block hover:bg-primary/30 transition-colors duration-200 hover:scale-105 transform font-montserrat"
                 >
                   {skill}
                 </span>
@@ -39,8 +39,8 @@ const SkillsSection = () => {
 
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <Card className="p-6 bg-primary/10 border-none">
-            <h3 className="font-pixel text-lg mb-4">Development Philosophy</h3>
-            <p className="text-muted-foreground">
+            <h3 className="font-montserrat text-lg mb-4 font-bold">Development Philosophy</h3>
+            <p className="text-muted-foreground font-montserrat">
               I am committed to creating clean, maintainable code that delivers exceptional user experiences.
               My approach combines technical expertise with a comprehensive understanding of user requirements,
               resulting in solutions that are both sophisticated and intuitive.

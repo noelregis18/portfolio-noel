@@ -15,7 +15,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden font-montserrat">
       {/* Background pattern */}
       <div
         className="fixed inset-0 z-[-1] opacity-30"

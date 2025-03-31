@@ -53,17 +53,17 @@ const HeroSection = () => {
       ></div>
 
       <div className="container mx-auto px-4 z-10 py-24">
-        <div className="absolute top-24 right-8 bg-background/30 backdrop-blur-md px-4 py-2 rounded-lg border border-primary/20 text-sm font-mono">
+        <div className="absolute top-24 right-8 bg-background/30 backdrop-blur-md px-4 py-2 rounded-lg border border-primary/20 text-sm font-montserrat">
           <div className="text-primary">{formatDate(currentDateTime)}</div>
-          <div className="text-right font-pixel text-xs">{formatTime(currentDateTime)}</div>
+          <div className="text-right font-montserrat text-xs">{formatTime(currentDateTime)}</div>
         </div>
         
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4 px-4 py-1 rounded-full bg-primary/20 text-primary">
-            <span className="font-pixel text-xs sm:text-sm">Full Stack Developer</span>
+            <span className="font-montserrat text-xs sm:text-sm">Full Stack Developer</span>
           </div>
           
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-pixel leading-tight animate-pixel-fade-in">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-montserrat leading-tight animate-pixel-fade-in">
             <span className="block">Designing and Developing</span>
             <span className="text-primary">Digital Solutions</span>
             <span className="block">That Inspire</span>
@@ -74,14 +74,14 @@ const HeroSection = () => {
           </p>
           
           <div className="terminal-container bg-black/50 p-6 rounded-lg mb-10 border-l-4 border-primary max-w-2xl mx-auto">
-            <p className="terminal-text font-mono text-pixel-text-dark text-sm sm:text-base leading-relaxed text-left">
+            <p className="terminal-text font-montserrat text-pixel-text-dark text-sm sm:text-base leading-relaxed text-left">
               <span className="text-primary">{'>'}</span> Greetings, I am Noel Regis, a full-stack developer dedicated to creating sophisticated digital experiences. I would be pleased to collaborate on bringing your concepts to fruition.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
             <Button
-              className="pixel-button bg-primary hover:bg-primary/90 text-white"
+              className="pixel-button bg-primary hover:bg-primary/90 text-white font-montserrat"
               onClick={() => {
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
@@ -94,7 +94,7 @@ const HeroSection = () => {
             
             <Button
               variant="outline"
-              className="pixel-button bg-transparent border-primary text-primary hover:bg-primary/10"
+              className="pixel-button bg-transparent border-primary text-primary hover:bg-primary/10 font-montserrat"
               onClick={() => {
                 const projectsSection = document.getElementById("projects");
                 if (projectsSection) {

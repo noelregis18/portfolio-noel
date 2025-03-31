@@ -86,10 +86,10 @@ const ContactSection = () => {
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title inline-block mx-auto font-pixel">
+          <h2 className="section-title inline-block mx-auto font-montserrat font-bold">
             <span className="text-primary">&lt;</span> Correspondence <span className="text-primary">/&gt;</span>
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto font-montserrat">
             I am always interested in learning about and collaborating on innovative projects.
             Please do not hesitate to reach out.
           </p>
@@ -97,11 +97,11 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-            <h3 className="font-pixel text-lg mb-6">Communication Inquiry</h3>
+            <h3 className="font-montserrat text-lg mb-6 font-bold">Communication Inquiry</h3>
             
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
+                <label htmlFor="name" className="block text-sm font-medium mb-1 font-montserrat">
                   Full Name
                 </label>
                 <Input
@@ -111,12 +111,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="Your full name"
-                  className="bg-background/50"
+                  className="bg-background/50 font-montserrat"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
+                <label htmlFor="email" className="block text-sm font-medium mb-1 font-montserrat">
                   Email Address
                 </label>
                 <Input
@@ -127,12 +127,12 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="your.email@example.com"
-                  className="bg-background/50"
+                  className="bg-background/50 font-montserrat"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
+                <label htmlFor="message" className="block text-sm font-medium mb-1 font-montserrat">
                   Message Content
                 </label>
                 <Textarea
@@ -143,13 +143,13 @@ const ContactSection = () => {
                   required
                   placeholder="Please provide details about your inquiry..."
                   rows={5}
-                  className="bg-background/50"
+                  className="bg-background/50 font-montserrat"
                 />
               </div>
               
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white"
+                className="w-full bg-primary hover:bg-primary/90 text-white font-montserrat"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Submit Inquiry"}
@@ -159,16 +159,16 @@ const ContactSection = () => {
 
           <div className="space-y-6">
             <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-              <h3 className="font-pixel text-lg mb-4">Contact Information</h3>
+              <h3 className="font-montserrat text-lg mb-4 font-bold">Contact Information</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Mail className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Email Address</p>
+                    <p className="text-sm font-medium font-montserrat">Email Address</p>
                     <a
                       href="mailto:noel.regis04@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors font-montserrat"
                     >
                       noel.regis04@gmail.com
                     </a>
@@ -178,10 +178,10 @@ const ContactSection = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Telephone</p>
+                    <p className="text-sm font-medium font-montserrat">Telephone</p>
                     <a
                       href="tel:+917319546900"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors font-montserrat"
                     >
                       +91 7319546900
                     </a>
@@ -191,10 +191,9 @@ const ContactSection = () => {
                 <div className="flex items-start gap-3 cursor-pointer" onClick={openGoogleMaps}>
                   <MapPin className="text-primary shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="text-sm font-medium">Geographic Location</p>
-                    <p className="text-muted-foreground hover:text-primary transition-colors group flex items-center">
+                    <p className="text-sm font-medium font-montserrat">Geographic Location</p>
+                    <p className="text-muted-foreground hover:text-primary transition-colors group flex items-center font-montserrat">
                       Asansol, West Bengal, India
-                      <span className="text-xs ml-2 text-primary opacity-70 group-hover:opacity-100">(View on Map)</span>
                     </p>
                   </div>
                 </div>
@@ -202,7 +201,7 @@ const ContactSection = () => {
             </Card>
 
             <Card className="p-6 pixel-border bg-card/90 backdrop-blur-sm">
-              <h3 className="font-pixel text-lg mb-4">Professional Network</h3>
+              <h3 className="font-montserrat text-lg mb-4 font-bold">Professional Network</h3>
               
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social) => (
@@ -211,7 +210,7 @@ const ContactSection = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-primary/10 hover:border-primary transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-primary/10 hover:border-primary transition-colors font-montserrat"
                     aria-label={`Visit ${social.name} profile`}
                   >
                     <span className="text-primary">{social.icon}</span>
