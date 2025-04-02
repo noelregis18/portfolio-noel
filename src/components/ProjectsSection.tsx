@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       description: "Online crowdfunding platform",
       website: "https://crowd-helper-haven.vercel.app/",
       github: "https://github.com/noelregis18/FundLaunch",
-      image: "https://media.licdn.com/dms/image/v2/D562DAQGynTzBXme9Vg/profile-treasury-image-shrink_160_160/B56ZXb59rdGcAo-/0/1743151160466?e=1744192800&v=beta&t=Xb9f_njXIQkRNfeDpihfah5jHFClglnOd-DxX-qVT6Y",
+      image: "https://img.freepik.com/free-photo/close-up-hand-holding-smartphone_23-2149151172.jpg?t=st=1743587492~exp=1743591092~hmac=c9e276d6be6ca9c37a8ca3151a26fa2b375529730307899e737460598cd36e59&w=1380",
       tags: ["React", "Node.js", "MongoDB"],
     },
     {
@@ -33,7 +33,7 @@ const ProjectsSection = () => {
       description: "Financial Calculators",
       website: "https://wealth-compass-hub.vercel.app/",
       github: "https://github.com/noelregis18/wealth-compass-hub",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      image: "https://img.freepik.com/free-photo/futuristic-robot-interacting-with-money_23-2151612609.jpg?t=st=1743587727~exp=1743591327~hmac=35fbc5e9783bd05e55b5905151da145bce86a288c97b5939849573719563ae4f&w=1380",
       tags: ["TypeScript", "Express", "CSS"],
     },
     {
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
       description: "Securely store and manage patients' medical histories in the cloud",
       website: "https://aarogya-bharat-gilt.vercel.app/",
       github: "https://github.com/noelregis18/aarogya-bharat",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      image: "https://img.freepik.com/free-photo/doctors-wearing-vr-simulation-with-hologram-medical-technology_53876-96336.jpg?t=st=1743587657~exp=1743591257~hmac=ba515d609857e7514d8d578d7bd98355a6ba348c4defa2d8a8109a40c3a76068&w=1380",
       tags: ["React", "Node.js", "Tailwind"],
     },
     {
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       description: "AI Customer Service Chatbot",
       website: "https://chefassist-ai-chat-3g2e.vercel.app/",
       github: "https://github.com/noelregis18/chefassist-ai-chat",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      image: "https://img.freepik.com/free-photo/chef-using-ar-technology-his-profession_23-2151137470.jpg?t=st=1743587594~exp=1743591194~hmac=ccb6d11ee07ccad59a76548ebc9b095289f01917f6b243568d8ff37763fd414c&w=1380",
       tags: ["React", "AI", "Node.js"],
     },
     {
@@ -69,7 +69,7 @@ const ProjectsSection = () => {
       description: "IoT Implementation in AgriTech Sector",
       website: "https://dairy-digital-innovations.vercel.app/",
       github: "https://github.com/noelregis18/dairy-digital-innovations",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+      image: "https://img.freepik.com/premium-photo/dairy-products-background-alpine-cows-mountains-eco-products-generative-ai_260899-3185.jpg?w=1380",
       tags: ["JavaScript", "CSS", "HTML"],
     },
   ];
