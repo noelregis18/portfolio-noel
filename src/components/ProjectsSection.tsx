@@ -69,7 +69,7 @@ const ProjectsSection = () => {
       description: "IoT Implementation in AgriTech Sector",
       website: "https://dairy-digital-innovations.vercel.app/",
       github: "https://github.com/noelregis18/dairy-digital-innovations",
-      image: "https://img.freepik.com/premium-photo/dairy-products-background-alpine-cows-mountains-eco-products-generative-ai_260899-3185.jpg?w=1380",
+      image: "https://dollons.com/blog/wp-content/uploads/2021/09/dollons-How-AI-can-help-Indian-Dairy-Industry-2.jpg",
       tags: ["JavaScript", "CSS", "HTML"],
     },
   ];
