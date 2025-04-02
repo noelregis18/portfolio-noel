@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       description: "Online crowdfunding platform",
       website: "https://crowd-helper-haven.vercel.app/",
       github: "https://github.com/noelregis18/FundLaunch",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "https://media.licdn.com/dms/image/v2/D562DAQGynTzBXme9Vg/profile-treasury-image-shrink_160_160/B56ZXb59rdGcAo-/0/1743151160466?e=1744192800&v=beta&t=Xb9f_njXIQkRNfeDpihfah5jHFClglnOd-DxX-qVT6Y",
       tags: ["React", "Node.js", "MongoDB"],
     },
     {
@@ -38,10 +38,10 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Gas Help Center",
-      description: "Simplifying Gas Utility Services",
-      website: "https://gas-help-center.vercel.app/",
-      github: "https://github.com/noelregis18/gas-help-center",
+      title: "Aarogya Bharat",
+      description: "Securely store and manage patients' medical histories in the cloud",
+      website: "https://aarogya-bharat-gilt.vercel.app/",
+      github: "https://github.com/noelregis18/aarogya-bharat",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
       tags: ["React", "Node.js", "Tailwind"],
     },
@@ -65,12 +65,12 @@ const ProjectsSection = () => {
     },
     {
       id: 6,
-      title: "Mirror",
-      description: "Simple, private file sharing",
-      website: "https://send.vis.ee/",
-      github: "https://github.com/noelregis18/Mirror",
+      title: "Dairy Digital Innovations",
+      description: "IoT Implementation in AgriTech Sector",
+      website: "https://dairy-digital-innovations.vercel.app/",
+      github: "https://github.com/noelregis18/dairy-digital-innovations",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
-      tags: ["JavaScript", "Privacy", "File Sharing"],
+      tags: ["JavaScript", "CSS", "HTML"],
     },
   ];
 
