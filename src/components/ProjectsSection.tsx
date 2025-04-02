@@ -29,12 +29,12 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: "SmartPark",
-      description: "Innovative Parking Management System",
-      website: "https://parkify-lot.vercel.app/",
-      github: "https://github.com/noelregis18/parkify-lot",
+      title: "Wealth Compass Hub",
+      description: "Financial Calculators",
+      website: "https://wealth-compass-hub.vercel.app/",
+      github: "https://github.com/noelregis18/wealth-compass-hub",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      tags: ["JavaScript", "Express", "MySQL"],
+      tags: ["TypeScript", "Express", "CSS"],
     },
     {
       id: 3,
