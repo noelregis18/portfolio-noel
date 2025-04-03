@@ -20,12 +20,12 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "FundLaunch",
-      description: "Online crowdfunding platform",
-      website: "https://crowd-helper-haven.vercel.app/",
-      github: "https://github.com/noelregis18/FundLaunch",
-      image: "https://img.freepik.com/free-photo/close-up-hand-holding-smartphone_23-2149151172.jpg?t=st=1743587492~exp=1743591092~hmac=c9e276d6be6ca9c37a8ca3151a26fa2b375529730307899e737460598cd36e59&w=1380",
-      tags: ["React", "Node.js", "MongoDB"],
+      title: "AI joke generator",
+      description: "Fetch and display jokes to users, providing entertainment on demand.",
+      website: "https://ai-joke-portal.vercel.app/",
+      github: "https://github.com/noelregis18/ai-joke-portal",
+      image: "https://images.squarespace-cdn.com/content/v1/62ec2bc76a27db7b37a2b32f/ba93663d-001e-4543-a7f4-cd06f7ef2f51/best-ai-joke-generator-2500.jpg",
+      tags: ["React", "TypeScript", "SQL"],
     },
     {
       id: 2,
