@@ -20,8 +20,8 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "AI joke generator",
-      description: "Fetch and display jokes to users, providing entertainment on demand.",
+      title: "AI Joke Generator",
+      description: "Fetch and display jokes to users, providing entertainment on demand",
       website: "https://ai-joke-portal.vercel.app/",
       github: "https://github.com/noelregis18/ai-joke-portal",
       image: "https://images.squarespace-cdn.com/content/v1/62ec2bc76a27db7b37a2b32f/ba93663d-001e-4543-a7f4-cd06f7ef2f51/best-ai-joke-generator-2500.jpg",
