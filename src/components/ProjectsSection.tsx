@@ -33,7 +33,7 @@ const ProjectsSection = () => {
       description: "Financial Calculators",
       website: "https://wealth-compass-hub.vercel.app/",
       github: "https://github.com/noelregis18/wealth-compass-hub",
-      image: "https://img.freepik.com/free-photo/futuristic-robot-interacting-with-money_23-2151612609.jpg?t=st=1743587727~exp=1743591327~hmac=35fbc5e9783bd05e55b5905151da145bce86a288c97b5939849573719563ae4f&w=1380",
+      image: "https://cdn.due.com/blog/wp-content/uploads/2023/12/Wealth-Career-Gateway-1024x585.png",
       tags: ["TypeScript", "Express", "CSS"],
     },
     {
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       description: "AI Customer Service Chatbot",
       website: "https://chefassist-ai-chat-3g2e.vercel.app/",
       github: "https://github.com/noelregis18/chefassist-ai-chat",
-      image: "https://img.freepik.com/free-photo/chef-using-ar-technology-his-profession_23-2151137470.jpg?t=st=1743587594~exp=1743591194~hmac=ccb6d11ee07ccad59a76548ebc9b095289f01917f6b243568d8ff37763fd414c&w=1380",
+      image: "https://cdn.mos.cms.futurecdn.net/N6Zin5EfFVCRRfoqjNRV4-1200-80.jpg",
       tags: ["React", "AI", "Node.js"],
     },
     {
