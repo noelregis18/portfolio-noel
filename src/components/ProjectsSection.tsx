@@ -42,7 +42,7 @@ const ProjectsSection = () => {
       description: "Securely store and manage patients' medical histories in the cloud",
       website: "https://aarogya-bharat-gilt.vercel.app/",
       github: "https://github.com/noelregis18/aarogya-bharat",
-      image: "https://img.freepik.com/free-photo/doctors-wearing-vr-simulation-with-hologram-medical-technology_53876-96336.jpg?t=st=1743587657~exp=1743591257~hmac=ba515d609857e7514d8d578d7bd98355a6ba348c4defa2d8a8109a40c3a76068&w=1380",
+      image: "https://www.alcimed.com/wp-content/uploads/2023/09/ai-medical-imaging-1.jpg",
       tags: ["React", "Node.js", "Tailwind"],
     },
     {
