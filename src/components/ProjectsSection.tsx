@@ -60,7 +60,7 @@ const ProjectsSection = () => {
       description: "Quick signatures within seconds",
       website: "https://digital-ink.vercel.app/",
       github: "https://github.com/noelregis18/Digital-Ink",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+      image: "https://res.cloudinary.com/certifier/image/upload/v1704190220/List_XXX_Free_Online_Signature_Generators_fed3c072c5.png",
       tags: ["TypeScript", "Canvas API", "React"],
     },
     {
