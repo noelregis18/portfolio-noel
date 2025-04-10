@@ -62,7 +62,7 @@ const ContactSection = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/noel-regis-aa07081b1/",
+      url: "https://www.linkedin.com/in/noel-regis-a87a0a34b/",
       icon: <Linkedin size={20} />,
     },
     {
