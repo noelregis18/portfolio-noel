@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       id: 4,
       title: "ChefAssist",
       description: "AI Customer Service Chatbot",
-      website: "https://chefassist-ai-chat-3g2e.vercel.app/",
+      website: "https://chef-assist-xi.vercel.app/",
       github: "https://github.com/noelregis18/chef-assist",
       image: "https://cdn.mos.cms.futurecdn.net/N6Zin5EfFVCRRfoqjNRV4-1200-80.jpg",
       tags: ["React", "AI", "Node.js"],
