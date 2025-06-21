@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 90% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 256 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 47% 11%;
+    --input: 223 47% 11%;
+    --ring: 256 91% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    --background: 0 0% 94%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 158 65% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 92% 90%;
+    --secondary-foreground: 258 94% 41%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 256 92% 90%;
+    --accent-foreground: 258 94% 41%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 215 20.2% 65.1%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 217.2 32.6% 17.5%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Pixel art border style */
+  .pixel-border {
+    @apply border-4 border-solid border-pixel-primary shadow-[0.25rem_0.25rem_0px_0px_rgba(0,0,0,0.2)];
+    image-rendering: pixelated;
+  }
+
+  /* CRT screen effect */
+  .crt-effect {
+    @apply relative overflow-hidden;
+    &::before {
+      content: "";
+      @apply absolute inset-0 pointer-events-none z-10;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+      background-size: 100% 4px;
+    }
+    &::after {
+      content: "";
+      @apply absolute inset-0 pointer-events-none z-10;
+      background: radial-gradient(circle, rgba(18, 16, 16, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
+    }
+  }
+
+  /* Terminal text effect */
+  .terminal-text {
+    @apply font-mono text-pixel-text-dark;
+    &::after {
+      content: "|";
+      @apply animate-blink;
+    }
+  }
+
+  /* Pixel button */
+  .pixel-button {
+    @apply inline-block px-6 py-3 bg-pixel-primary text-white font-pixel text-sm uppercase tracking-wide
+           border-2 border-solid border-black shadow-[0.25rem_0.25rem_0px_0px_rgba(0,0,0,0.5)]
+           transition-all duration-200 cursor-pointer hover:translate-y-1 hover:shadow-[0.125rem_0.125rem_0px_0px_rgba(0,0,0,0.5)];
+    image-rendering: pixelated;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  /* Section styling */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 min-h-screen flex items-center;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 inline-block relative;
+    &::after {
+      content: "";
+      @apply absolute -bottom-2 left-0 w-16 h-1 bg-pixel-primary;
+    }
+  }
+}
